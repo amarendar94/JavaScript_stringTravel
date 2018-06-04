@@ -15,8 +15,8 @@ document.getElementById("right").addEventListener('click', function () {
 document.getElementById("left").addEventListener('click', function () {
     clearInterval(timeInt);
     timeInt = setInterval(function () {
-        document.getElementById("textbox1").value += document.getElementById("textbox2").value.charAt(0);
-        document.getElementById("textbox2").value = document.getElementById("textbox2").value.substr(1);
+        document.getElementById("textbox1").value = document.getElementById("textbox2").value.charAt(document.getElementById("textbox2").value.length-1) + document.getElementById("textbox1").value;
+        document.getElementById("textbox2").value = document.getElementById("textbox2").value.substr(0,document.getElementById("textbox2").value.length-1);
         if(document.getElementById("textbox2").value.length == 0){
             clearInterval(timeInt);
         }
